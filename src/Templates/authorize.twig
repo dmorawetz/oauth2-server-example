@@ -1,0 +1,16 @@
+{% extends 'html.twig' %}
+
+{% block contents %}
+<h1 class="h3 mb-3 font-weight-normal">Grant the following access rights to <b>{{ clientName }}</b>?</h1>
+
+<ul>
+    {% for scope in scopes %}
+        <li>{{ scope }}</li>
+    {% endfor %}
+</ul>
+
+<form method="post">
+    <button type="submit" name="authorized" value="true">Yes</button><br/>
+    <button type="submit" name="authorized" value="false">No</button><br/>
+</form>
+{% endblock %}
